@@ -1,0 +1,45 @@
+<div class="form-container mat-elevation-z5">
+  <h1 class="text">Zarejestruj się jako nowy użytkownik!</h1>
+
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+
+    <mat-form-field class="nameForm" appearance="outline">
+      <input class="name" matInput placeholder="Imię" formControlName="name" type="name" />
+      <mat-error *ngIf="name?.errors?.['required']">
+        Imię jest wymagane
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Email" formControlName="email" type="name" />
+      <mat-error *ngIf="email?.errors?.['required']">
+        Email jest wymagany
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Hasło" formControlName="password" type="password" />
+      <mat-error *ngIf="password?.errors?.['required']">
+        Hasło jest wymagane i musi być co najmniej 6 znaki
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Potwierdź hasło" formControlName="confirmPassword" type="password" />
+      <mat-error *ngIf="password?.errors?.['required']">
+        Wymagane jest potwierdzenie hasła
+      </mat-error>
+    </mat-form-field>
+
+    <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+      Hasła powinny się zgadzać
+    </mat-error>
+
+    <div class="center margin-top">
+      <button class="nextButton" mat-raised-button color="primary" routerLink="/reactive-forms"
+        [disabled]="signUpForm.invalid">
+        Dalej!
+      </button>
+    </div>
+  </form>
+</div>

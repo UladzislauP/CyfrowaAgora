@@ -1,0 +1,117 @@
+.form-container {
+  display: block;
+  max-width: 520px;
+  background-color: #E1EAF9;
+  border-radius: 16px;
+  height: 590px;
+  margin: auto;
+  margin-top: 35px;
+}
+
+.form-container mat-form-field {
+  width: 100%;
+}
+
+.text {
+  text-align: center;
+  padding-top: 52px;
+  color: #368EA3;
+  font-size: 30px !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-top {
+  margin-top: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mat-button,
+.mat-raised-button {
+  background-color: #F0D36D;
+  border-color: none;
+}
+
+.nextButton {
+  border-radius: 30px;
+  width: 200px;
+  color: #368EA3;
+  height: 60px;
+  font-size: 26px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 80px;
+}
+
+::ng-deep {
+  body {
+    background-color: #E1EAF9;
+  }
+
+  mat-form-field-infix ng-tns-c79-24 {
+    background-color: white;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    border-radius: 16px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    background-color: white !important;
+    border-radius: 25px 0 0 25px !important;
+    min-width: 25px !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-gap {
+    background-color: white !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    background-color: white !important;
+    border-radius: 0 25px 25px 0 !important;
+  }
+
+  mat-form-field mat-label {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    opacity: 1 !important;
+    padding: 0 0 0 0;
+  }
+
+  input[type="name"] {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  input[type="email"] {
+    font-size: 22px;
+  }
+
+  input[type="password"] {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  a {
+    padding-left: 94px;
+    padding-right: 94px;
+  }
+
+  mat-form-field {
+    padding-left: 47px;
+    padding-right: 47px;
+  }
+}
+
+.nameForm {
+  padding-top: 15px;
+}
