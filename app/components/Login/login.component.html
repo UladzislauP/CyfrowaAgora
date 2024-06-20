@@ -1,0 +1,33 @@
+<div class="form-container mat-elevation-z5">
+  <h1 class="text" color="#368EA3">Dołącz do społeczności Cyfrowej Agory!</h1>
+  <form class="foRm" [formGroup]="loginForm" (ngSubmit)="submit()">
+
+    <mat-form-field class="emailForm" appearance="outline">
+      <input class="email" matInput placeholder="Email" formControlName="email" type="email" />
+      <mat-error *ngIf="email?.errors?.['required']">
+        Email is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input class="password" matInput placeholder="Hasło" formControlName="password" type="password" />
+      <mat-error *ngIf="password?.errors?.['required']">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+
+    <div class="center margin-top">
+      <button class="loginButton" mat-raised-button color="accent" type="submit">
+        Zaloguj się
+      </button>
+    </div>
+
+    <div class="center margin-top">
+      <button class="signUpButton" mat-raised-button color="accent" type="submit" routerLink="/sign-up">
+        Zarejestruj się
+      </button>
+    </div>
+
+  </form>
+</div>
+<router-outlet></router-outlet>
