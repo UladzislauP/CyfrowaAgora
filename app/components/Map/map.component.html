@@ -1,0 +1,77 @@
+<button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
+  <mat-icon *ngIf="!sidenav.opened">
+    menu
+  </mat-icon>
+  <mat-icon *ngIf="sidenav.opened">
+    close
+  </mat-icon>
+</button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <button mat-button class="menu-button" routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Strona główna</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/settings">
+      <mat-icon>info</mat-icon>
+      <span>Instrukcja</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/map">
+      <mat-icon> thumb_up </mat-icon>
+      <span>Podoba mi się</span>
+    </button>
+
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/contact">
+      <mat-icon>message</mat-icon>
+      <span>Kontakt</span>
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="map-container">
+      <div class="map-frame">
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw-src.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw-src.js"></script>
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+        <script src="js/leaflet.awesome-markers.js"></script>
+        <div id="map">
+        </div>
+        <div class="ButtonsConstroll">
+          <form [formGroup]="opinionForm" class="Form-group">
+            <mat-form-field class="textareaContainer" appearance="outline">
+              <mat-label>Dodaj komentarz</mat-label>
+              <textarea matInput [value]="name" (input)="onValueChange($event)"></textarea>
+            </mat-form-field>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/icon?family=MAterial+Icons" rel="stylesheet">
+            <div class="filebox">
+              <input type="file" id="file" (change)="upload($event)" />
+              <label for="file">
+                <i class="material-icons">
+                  add_photo_alternate
+                </i> &nbsp;
+                Dołącz Zdjęcie
+              </label>
+            </div>
+            <div class="filebox">
+              <textarea class="fileName" disabled>Nazwa Pliku: {{file.name}}
+      </textarea>
+            </div>
+            <div class="center">
+              <button class="button" mat-raised-button type="submit" (click)="submitData(opinionForm.value)"
+                routerLink="/thanks" [disabled]="">
+                Podoba mi się, zgłaszam ></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
