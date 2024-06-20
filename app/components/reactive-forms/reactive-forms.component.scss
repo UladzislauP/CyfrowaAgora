@@ -1,0 +1,113 @@
+.Form-group {
+  display: block;
+  max-width: 1000px;
+  background-color: rgb(255, 255, 255, 0.75);
+  border-radius: 16px;
+  height: 1000px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.Form-group input,
+.Form-group textarea {
+  width: 100%;
+  color: black;
+  resize: none;
+  height: 15px;
+  border-color: black;
+}
+
+.submitMessage {
+  color: green;
+}
+
+.text {
+  color: #368EA3;
+  font-size: 20px;
+  height: 15px;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+mat-form-field-flex {
+  height: 15px;
+}
+
+.ankieta {
+  padding-top: 15px;
+  display: block;
+  border-radius: 16px;
+}
+
+:host body {
+  background: #E1EAF9;
+}
+
+::ng-deep {
+  body {
+    background-color: #E1EAF9;
+  }
+
+  mat-form-field-infix ng-tns-c79-24 {
+    background-color: white;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 1em 1em 0.5em 0.5em;
+    border-radius: 16px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    background-color: white !important;
+    border-radius: 25px 0 0 25px !important;
+    min-width: 25px !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-gap {
+    background-color: white !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    background-color: white !important;
+    border-radius: 0 25px 25px 0 !important;
+  }
+
+  mat-form-field mat-label {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    opacity: 1 !important;
+    padding: 0 0 0 0;
+  }
+
+}
+
+mat-form-field {
+  width: 100%;
+  padding-left: 49px;
+  padding-right: 49px;
+}
+
+.sendButton {
+  border-radius: 30px;
+  width: 260px;
+  color: #368EA3;
+  height: 70px;
+  font-size: 26px;
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+}
+
+.mat-button,
+.mat-raised-button {
+  background-color: #F0D36D;
+  border-color: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}

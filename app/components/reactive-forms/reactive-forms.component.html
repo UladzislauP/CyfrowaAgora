@@ -1,0 +1,77 @@
+<div class="anketa">
+  <form [formGroup]="ankietForm" class="Form-group">
+    <div class="text">Jestem:</div>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Wybierz</mat-label>
+      <mat-select formControlName="question1">
+        <mat-option *ngFor="let quest of question1" [value]="quest.value">
+          {{quest.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="text">Płeć:</div>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Wybierz</mat-label>
+      <mat-select formControlName="question2">
+        <mat-option *ngFor="let quest of question2" [value]="quest.value">
+          {{quest.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="text">Najczęściej na terenie Kampusu Centralnego PW jestem:</div>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Wybierz</mat-label>
+      <mat-select formControlName="question3" multiple>
+        <!-- <mat-radio-group> -->
+        <mat-option *ngFor="let quest of question3" [value]='quest.value'>
+          {{quest.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- </mat-radio-group> -->
+
+    <br>
+    <div class="text">Jak zazwyczaj docierasz na Kampus Centralny PW?</div>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Wybierz</mat-label>
+      <mat-select formControlName="question4">
+        <mat-option *ngFor="let quest of question4" [value]="quest.value">
+          {{quest.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="text">Czego dotychczas nie robiłeś na terenie Kampusu Centralnego PW, a chciałbyś/chciałabyś?</div>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Odpowiedz</mat-label>
+      <textarea matInput formControlName="question5"></textarea>
+    </mat-form-field>
+
+    <div class="text">Jakim słowem określiłbyś/określiłabyś Kampus Centralny PW?</div>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Odpowiedz</mat-label>
+      <textarea matInput formControlName="question6"></textarea>
+    </mat-form-field>
+
+    <div class="text">Dlaczego postanowiłeś założyć konto w Digital Agora?</div>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Odpowiedz</mat-label>
+      <textarea matInput formControlName="question7"></textarea>
+    </mat-form-field>
+
+    <div class="center margin-top">
+      <button class="sendButton" mat-raised-button type="submit" color="primary" (click)="submitData(ankietForm.value)"
+        routerLink="/home" [disabled]="ankietForm.invalid">Prześlij</button>
+      <p *ngIf="isSubmit" class="submitMessage">{{submitMessage}}</p>
+    </div>
+  </form>
+</div>
