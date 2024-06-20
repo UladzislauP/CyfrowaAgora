@@ -1,0 +1,57 @@
+<button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
+  <mat-icon *ngIf="!sidenav.opened">
+    menu
+  </mat-icon>
+  <mat-icon *ngIf="sidenav.opened">
+    close
+  </mat-icon>
+</button>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+
+    <button mat-button class="menu-button" routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Strona główna</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/settings">
+      <mat-icon>info</mat-icon>
+      <span>Instrukcja</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/map">
+      <mat-icon> thumb_up </mat-icon>
+      <span>Podoba mi się</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/map1">
+      <mat-icon> thumb_down </mat-icon>
+      <span>Nie podoba mi się</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/contact">
+      <mat-icon>message</mat-icon>
+      <span>Kontakt</span>
+    </button>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <script src="../../Jquery/prettify.js"></script>
+    <div class="content mat-elevation-z4">
+      <!-- <h1 *ngIf="user$ |async as user ">Welcome to Cyfrowa Agora! {{user.displayName}}!</h1> -->
+      <div class="ButtonsConstroll">
+        <img [src]="logo">
+        <div><b><a class="a1" *ngIf="user$ |async as user ">{{user.displayName}}, dziękujemy! </a><mat-icon>favorite
+              icon</mat-icon></b></div>
+        <br>
+        <a>Dzięki Tobie Kampus Centralny PW może stać się niezastąpionym miejscem pracy badawczej, naukowej, a także
+          przestrzenią inspirujących spotkań i spędzania czasu wolnego społeczności akademickiej oraz lokalnej.</a>
+        <br>
+        <br>
+        <a>Już za moment na stronie <a href="https://www.hsc.pw.edu.pl/">Human Smart City</a> będzie można zobaczyć co
+          inni sądzą na temat Kampusu Centralnego PW. </a>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
